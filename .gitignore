@@ -9,3 +9,5 @@
 
 # Other
 release/
+.clj-kondo/
+.lsp/
