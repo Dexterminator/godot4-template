@@ -1,11 +1,15 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpj7fskgwfvxb"]
+[gd_scene load_steps=3 format=3 uid="uid://bpj7fskgwfvxb"]
 
 [ext_resource type="Script" path="res://environments/wall/wall.gd" id="1_g4caf"]
+[ext_resource type="Texture2D" uid="uid://cht37kacd4en4" path="res://environments/wall/pattern_0010.png" id="2_yiicf"]
 
 [node name="Wall" type="StaticBody2D"]
 collision_mask = 0
 script = ExtResource("1_g4caf")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
+texture_repeat = 2
+texture = ExtResource("2_yiicf")
+texture_scale = Vector2(2, 2)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
