@@ -3,6 +3,7 @@ extends Node
 const JUMP = "jump"
 const LEFT = "left"
 const RIGHT = "right"
+const ACTION = "action"
 
 
 func _pad_input_event(device_index, button_index):
@@ -40,9 +41,10 @@ func _add_event(action_name, key, button):
 
 
 func _ready():
-	for action in [LEFT, RIGHT, JUMP]:
+	for action in [LEFT, RIGHT, JUMP, ACTION]:
 		InputMap.add_action(action)
 
 	_add_event(RIGHT, KEY_D, JOY_BUTTON_DPAD_RIGHT)
 	_add_event(LEFT, KEY_A, JOY_BUTTON_DPAD_RIGHT)
 	_add_event(JUMP, KEY_SPACE, JOY_BUTTON_A)
+	_add_event(ACTION, KEY_J, JOY_BUTTON_X)
