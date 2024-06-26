@@ -22,5 +22,13 @@ position = Vector2(704, 192)
 position = Vector2(288, 0)
 polygon = PackedVector2Array(-224, 592, 424, 328, 424, 216, 424, 80, -152, 248)
 
+[node name="Wall3" parent="." instance=ExtResource("2_s6s2h")]
+position = Vector2(-32, 800)
+
+[node name="Polygon2D" parent="Wall3" index="0"]
+position = Vector2(184, -102)
+polygon = PackedVector2Array(-152, 328, 1440, 328, 1440, 216, -152, 216)
+
 [editable path="Wall"]
 [editable path="Wall2"]
+[editable path="Wall3"]
