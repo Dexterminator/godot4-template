@@ -11,5 +11,6 @@ func enter(_data):
 
 
 func physics_process(_delta):
+	Events.shake.emit(0.9)
 	if Delta.exceeded(ts_started, 1):
 		transition_to("default")
