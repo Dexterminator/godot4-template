@@ -1,0 +1,11 @@
+# Godot 4+ specific ignores
+.godot/
+
+#MacOS etc
+.DS_Store
+.vscode
+.idea
+*.iml
+
+# Other
+release/
