@@ -1,3 +1,11 @@
-[gd_scene format=3 uid="uid://bpj7fskgwfvxb"]
+[gd_scene load_steps=2 format=3 uid="uid://bpj7fskgwfvxb"]
 
-[node name="Wall" type="Node2D"]
+[ext_resource type="Script" path="res://environments/wall/wall.gd" id="1_g4caf"]
+
+[node name="Wall" type="StaticBody2D"]
+collision_mask = 0
+script = ExtResource("1_g4caf")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]

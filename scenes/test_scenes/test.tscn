@@ -1,7 +1,26 @@
-[gd_scene load_steps=2 format=3 uid="uid://q0785d0vmqi1"]
+[gd_scene load_steps=3 format=3 uid="uid://q0785d0vmqi1"]
 
 [ext_resource type="PackedScene" uid="uid://ufk40ga6x70w" path="res://entities/player/player.tscn" id="1_2vdig"]
+[ext_resource type="PackedScene" uid="uid://bpj7fskgwfvxb" path="res://environments/wall/wall.tscn" id="2_s6s2h"]
 
 [node name="Test" type="Node2D"]
 
 [node name="Player" parent="." instance=ExtResource("1_2vdig")]
+position = Vector2(112, 0)
+collision_layer = 2
+
+[node name="Wall" parent="." instance=ExtResource("2_s6s2h")]
+
+[node name="Polygon2D" parent="Wall" index="0"]
+position = Vector2(192, 0)
+polygon = PackedVector2Array(-152, 328, 424, 328, 424, 216, -152, 216)
+
+[node name="Wall2" parent="." instance=ExtResource("2_s6s2h")]
+position = Vector2(704, 192)
+
+[node name="Polygon2D" parent="Wall2" index="0"]
+position = Vector2(288, 0)
+polygon = PackedVector2Array(-224, 592, 424, 328, 424, 216, 424, 80, -152, 248)
+
+[editable path="Wall"]
+[editable path="Wall2"]
