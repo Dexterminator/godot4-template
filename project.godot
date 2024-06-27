@@ -21,6 +21,7 @@ Delta="*res://autoloads/delta.gd"
 Events="*res://autoloads/events.gd"
 Slowdown="*res://autoloads/slowdown.gd"
 Debug="*res://autoloads/debug.gd"
+InputBuffer="*res://autoloads/input_buffer.gd"
 
 [debug]
 

@@ -17,7 +17,7 @@ func physics_process(delta: float) -> void:
 	if not o.is_on_floor():
 		o.velocity.y += o.gravity * delta
 
-	if Input.is_action_just_pressed(Actions.JUMP) and o.is_on_floor():
+	if o.is_on_floor() and InputBuffer.is_action_buffer_pressed(Actions.JUMP):
 		o.velocity.y = o.JUMP_VELOCITY
 
 	var direction := Input.get_axis(Actions.LEFT, Actions.RIGHT)
