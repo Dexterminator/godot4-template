@@ -32,7 +32,6 @@ polygon = PackedVector2Array(-152, 328, 1440, 328, 1440, 216, -152, 216)
 
 [node name="ShakeCamera2D" parent="." instance=ExtResource("3_s7f5k")]
 anchor_mode = 0
-amplitude = 30.0
 
 [editable path="Wall"]
 [editable path="Wall2"]

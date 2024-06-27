@@ -1,11 +1,12 @@
+class_name Player
 extends CharacterBody2D
 
 const SPEED = 500.0
 const JUMP_VELOCITY = -400.0
-var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
+var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-@onready var state_machine = $StateMachine
+@onready var state_machine: StateMachine = $StateMachine
 
 
-func _ready():
+func _ready() -> void:
 	state_machine.initialize("default")

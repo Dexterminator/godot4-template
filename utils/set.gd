@@ -1,24 +1,24 @@
 class_name Set
 
-var _dict
+var _dict: Dictionary
 
 
-func _init():
+func _init() -> void:
 	_dict = {}
 
 
-func add(x):
+func add(x: Variant) -> void:
 	_dict[x] = x
 
 
-func add_all(coll):
-	for x in coll:
+func add_all(coll: Variant) -> void:
+	for x: Variant in coll:
 		_dict[x] = x
 
 
-func has(x):
+func has(x: Variant) -> bool:
 	return x in _dict
 
 
-func size():
+func size() -> int:
 	return len(_dict)

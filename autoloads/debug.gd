@@ -1,13 +1,14 @@
 extends Node
-var time_scale = 1
+
+var time_scale := 1.0
 
 
-func _process(_delta):
+func _process(_delta: float) -> void:
 	if OS.is_debug_build() and time_scale < 1:
 		Engine.time_scale = time_scale
 
 
-func _input(_delta):
+func _input(_event: InputEvent) -> void:
 	if not OS.is_debug_build():
 		return
 

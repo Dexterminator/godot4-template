@@ -1,14 +1,15 @@
-extends "res://utils/state_machine/state.gd"
+extends "res://entities/player/player_state.gd"
 
+@warning_ignore("untyped_declaration")
 var ts_started
 
 
-func enter(_data):
+func enter(_data: Dictionary) -> void:
 	ts_started = Delta.now
 	Slowdown.start(1)
 
 
-func physics_process(delta):
+func physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed(Actions.ACTION):
 		transition_to("blinking")
 		return
@@ -19,7 +20,7 @@ func physics_process(delta):
 	if Input.is_action_just_pressed(Actions.JUMP) and o.is_on_floor():
 		o.velocity.y = o.JUMP_VELOCITY
 
-	var direction = Input.get_axis(Actions.LEFT, Actions.RIGHT)
+	var direction := Input.get_axis(Actions.LEFT, Actions.RIGHT)
 	if direction:
 		o.velocity.x = direction * o.SPEED
 	else:
