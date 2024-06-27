@@ -20,6 +20,7 @@ Actions="*res://autoloads/actions.gd"
 Delta="*res://autoloads/delta.gd"
 Events="*res://autoloads/events.gd"
 Slowdown="*res://autoloads/slowdown.gd"
+Debug="*res://autoloads/debug.gd"
 
 [display]
 
