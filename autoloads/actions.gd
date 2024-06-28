@@ -48,3 +48,7 @@ func _ready() -> void:
 	_add_event(LEFT, KEY_A, JOY_BUTTON_DPAD_RIGHT)
 	_add_event(JUMP, KEY_SPACE, JOY_BUTTON_A)
 	_add_event(ACTION, KEY_J, JOY_BUTTON_X)
+	_add_key_event("ui_up", KEY_W)
+	_add_key_event("ui_down", KEY_S)
+	_add_key_event("ui_left", KEY_A)
+	_add_key_event("ui_right", KEY_D)
