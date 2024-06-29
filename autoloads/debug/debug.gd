@@ -1,6 +1,11 @@
-extends Node
+extends CanvasLayer
 
 var time_scale := 1.0
+@onready var fps_label: Label = $MarginContainer/FpsLabel
+
+
+func _ready() -> void:
+	visible = false
 
 
 func _process(_delta: float) -> void:
@@ -12,8 +17,17 @@ func _input(_event: InputEvent) -> void:
 	if not OS.is_debug_build():
 		return
 
+	if visible:
+		fps_label.text = "FPS: %s" % Engine.get_frames_per_second()
+
 	if not Input.is_key_pressed(KEY_ALT):
 		return
+
+	if Input.is_key_pressed(KEY_9):
+		visible = true
+
+	if Input.is_key_pressed(KEY_0):
+		visible = false
 
 	if Input.is_key_pressed(KEY_2):
 		if time_scale < 1:
