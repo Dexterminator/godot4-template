@@ -23,16 +23,27 @@ func _fade(value: float) -> Tween:
 	return tween
 
 
-func change_scene(new_scene: PackedScene) -> void:
-	assert(current_scene)
-	current_scene.set_physics_process(false)
-	current_scene.set_process(false)
+func _unload_current() -> void:
 	var root := get_tree().get_root()
-	await _fade(1).finished
 	root.remove_child(current_scene)
 	current_scene.queue_free()
+
+
+func _load_new(new_scene: PackedScene) -> void:
+	var root := get_tree().get_root()
 	current_scene = new_scene.instantiate()
 	root.add_child(current_scene)
-	get_tree().paused = true
-	await _fade(0).finished
-	get_tree().paused = false
+
+
+func _disable_current() -> void:
+	current_scene.set_physics_process(false)
+	current_scene.set_process(false)
+
+
+func change_scene(new_scene: PackedScene) -> void:
+	assert(current_scene)
+	_disable_current()
+	await _fade(1).finished
+	_unload_current()
+	_load_new(new_scene)
+	_fade(0)
