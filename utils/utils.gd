@@ -34,7 +34,7 @@ static func format_number(n: int) -> String:
 	return s
 
 
-static func spawn(factory: PackedScene, parent: Node2D, pos: Vector2):
+static func spawn(factory: PackedScene, parent: Node2D, pos: Vector2) -> Node2D:
 	var node: Node2D = factory.instantiate()
 	node.global_position = pos
 	parent.add_child(node)

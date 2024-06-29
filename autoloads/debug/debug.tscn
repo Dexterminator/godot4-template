@@ -4,6 +4,7 @@
 [ext_resource type="Theme" uid="uid://bef14xpt531v5" path="res://ui/themes/theme.tres" id="1_od86y"]
 
 [node name="Debug" type="CanvasLayer"]
+layer = 128
 script = ExtResource("1_mxgy3")
 
 [node name="MarginContainer" type="MarginContainer" parent="."]

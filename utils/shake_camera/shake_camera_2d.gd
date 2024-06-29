@@ -11,7 +11,7 @@ var trauma := 0.0  #Current shake strength
 var trauma_pwr := 3  #Trauma exponent. Use [2,3]
 
 
-func _ready():
+func _ready() -> void:
 	randomize()
 	noise = FastNoiseLite.new()
 	noise.noise_type = FastNoiseLite.TYPE_SIMPLEX
@@ -19,16 +19,16 @@ func _ready():
 	Events.shake.connect(_add_trauma)
 
 
-func _add_trauma(amount: float, max_amount: float):
-	var new_trauma = min(trauma + amount, max_amount)
+func _add_trauma(amount: float, max_amount: float) -> void:
+	var new_trauma: float = min(trauma + amount, max_amount)
 	if new_trauma > trauma:
 		trauma = min(trauma + amount, 1.0)
 
 
-func _process(delta):
+func _process(delta: float) -> void:
 	if trauma:
 		trauma = max(trauma - decay * delta, 0)
-		shake()
+		_shake()
 	#optional
 	# elif offset.x != 0 or offset.y != 0 or rotation != 0:
 	# 	lerp(offset.x, 0.0, 1)
@@ -36,8 +36,8 @@ func _process(delta):
 	# 	lerp(rotation, 0.0, 1)
 
 
-func shake():
-	var amt = pow(trauma, trauma_pwr) * 5
+func _shake() -> void:
+	var amt: float = pow(trauma, trauma_pwr) * 5
 	noise_y += 1
 	rotation = max_roll * amt * noise.get_noise_2d(0, noise_y)
 	offset.x = max_offset.x * amt * noise.get_noise_2d(1000, noise_y)

@@ -6,7 +6,6 @@ var ts_started
 
 func enter(_data: Dictionary) -> void:
 	ts_started = Delta.now
-	Slowdown.start(1)
 
 
 func physics_process(delta: float) -> void:

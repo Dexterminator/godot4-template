@@ -9,7 +9,12 @@ func _quit() -> void:
 	get_tree().quit()
 
 
+func _start_game() -> void:
+	SceneManager.change_scene(SceneManager.TestScene)
+
+
 func _ready() -> void:
+	SceneManager.current_scene = self
 	start_game_button.grab_focus()
-	start_game_button.pressed.connect(func() -> void: print("pressed!"))
+	start_game_button.pressed.connect(_start_game)
 	exit_game_button.pressed.connect(_quit)
