@@ -35,7 +35,9 @@ polygon = PackedVector2Array(-152, 328, 1440, 328, 1440, 216, -152, 216)
 [node name="ShakeCamera2D" parent="." instance=ExtResource("3_s7f5k")]
 anchor_mode = 0
 
-[node name="BlinkLabel" type="Label" parent="."]
+[node name="GUI" type="CanvasLayer" parent="."]
+
+[node name="BlinkLabel" type="Label" parent="GUI"]
 offset_left = 1695.0
 offset_top = 28.0
 offset_right = 1823.0
