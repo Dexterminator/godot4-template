@@ -1,10 +1,23 @@
 extends CanvasLayer
 
 var time_scale := 1.0
-@onready var fps_label: Label = $MarginContainer/FpsLabel
+var ts_timer_started := -1
+@onready var fps_label: Label = $MarginContainer/VBoxContainer/FpsLabel
+@onready var timer_label: Label = $MarginContainer/VBoxContainer/TimerLabel
 @onready var menu: PanelContainer = $DebugMenu
 @onready
 var fps_checkbox: CheckBox = $DebugMenu/MarginContainer/VBoxContainer/HBoxContainer/FpsCheckbox
+@onready
+var timer_checkbox: CheckBox = $DebugMenu/MarginContainer/VBoxContainer/HBoxContainer2/TimerCheckbox
+
+
+func _toggle_timer(toggled_on: bool) -> void:
+	if toggled_on:
+		timer_label.visible = true
+		ts_timer_started = Time.get_ticks_msec()
+		menu.visible = false
+	else:
+		timer_label.visible = false
 
 
 func _ready() -> void:
@@ -12,21 +25,31 @@ func _ready() -> void:
 		visible = false
 
 	fps_label.visible = false
+	timer_label.visible = false
 	menu.visible = false
 	fps_checkbox.toggled.connect(func(toggled_on: bool) -> void: fps_label.visible = toggled_on)
+	timer_checkbox.toggled.connect(_toggle_timer)
 
 
 func _process(_delta: float) -> void:
 	if OS.is_debug_build() and time_scale < 1:
 		Engine.time_scale = time_scale
+	if timer_label.visible:
+		var time_elapsed := Time.get_ticks_msec() - ts_timer_started
+		var total_seconds := time_elapsed / 1000.0
+		var seconds: float = fmod(total_seconds, 60.0)
+		var minutes: int = int(total_seconds / 60.0) % 60
+		var hours: int = int(total_seconds / 3600.0)
+		var time_string: String = "%02d:%02d:%05.2f" % [hours, minutes, seconds]
+		timer_label.text = time_string
+
+	if fps_label.visible:
+		fps_label.text = "FPS: %s" % Engine.get_frames_per_second()
 
 
 func _input(_event: InputEvent) -> void:
 	if not OS.is_debug_build():
 		return
-
-	if fps_label.visible:
-		fps_label.text = "FPS: %s" % Engine.get_frames_per_second()
 
 	if not Input.is_key_pressed(KEY_ALT):
 		return

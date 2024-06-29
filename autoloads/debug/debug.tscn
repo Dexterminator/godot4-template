@@ -12,10 +12,18 @@ offset_bottom = 89.0
 theme_override_constants/margin_left = 50
 theme_override_constants/margin_top = 50
 
-[node name="FpsLabel" type="Label" parent="MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+
+[node name="FpsLabel" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 theme = ExtResource("1_od86y")
 text = "FPS: 0"
+
+[node name="TimerLabel" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("1_od86y")
+text = "00:00:00"
 
 [node name="DebugMenu" type="PanelContainer" parent="."]
 offset_right = 40.0
@@ -41,4 +49,15 @@ layout_mode = 2
 text = "Show fps:"
 
 [node name="FpsCheckbox" type="CheckBox" parent="DebugMenu/MarginContainer/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="DebugMenu/MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Label" type="Label" parent="DebugMenu/MarginContainer/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+text = "Show timer:"
+
+[node name="TimerCheckbox" type="CheckBox" parent="DebugMenu/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
