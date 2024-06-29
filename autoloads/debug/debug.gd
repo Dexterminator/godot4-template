@@ -2,10 +2,18 @@ extends CanvasLayer
 
 var time_scale := 1.0
 @onready var fps_label: Label = $MarginContainer/FpsLabel
+@onready var menu: PanelContainer = $DebugMenu
+@onready
+var fps_checkbox: CheckBox = $DebugMenu/MarginContainer/VBoxContainer/HBoxContainer/FpsCheckbox
 
 
 func _ready() -> void:
-	visible = false
+	if not OS.is_debug_build():
+		visible = false
+
+	fps_label.visible = false
+	menu.visible = false
+	fps_checkbox.toggled.connect(func(toggled_on: bool) -> void: fps_label.visible = toggled_on)
 
 
 func _process(_delta: float) -> void:
@@ -17,17 +25,17 @@ func _input(_event: InputEvent) -> void:
 	if not OS.is_debug_build():
 		return
 
-	if visible:
+	if fps_label.visible:
 		fps_label.text = "FPS: %s" % Engine.get_frames_per_second()
 
 	if not Input.is_key_pressed(KEY_ALT):
 		return
 
 	if Input.is_key_pressed(KEY_9):
-		visible = true
+		menu.visible = true
 
 	if Input.is_key_pressed(KEY_0):
-		visible = false
+		menu.visible = false
 
 	if Input.is_key_pressed(KEY_2):
 		if time_scale < 1:
