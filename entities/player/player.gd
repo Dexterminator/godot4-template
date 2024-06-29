@@ -11,3 +11,8 @@ var blink_count := 0
 
 func _ready() -> void:
 	state_machine.initialize("default")
+
+
+func _physics_process(_delta: float) -> void:
+	if Input.is_action_just_pressed(Actions.ACTION):
+		Events.shake.emit(0.4, 0.6)
