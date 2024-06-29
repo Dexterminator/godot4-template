@@ -39,3 +39,13 @@ static func spawn(factory: PackedScene, parent: Node2D, pos: Vector2):
 	node.global_position = pos
 	parent.add_child(node)
 	return node
+
+
+static func wait_timer(parent: Node2D, wait_time: float) -> Timer:
+	var timer := Timer.new()
+	parent.add_child(timer)
+	timer.wait_time = wait_time
+	timer.one_shot = true
+	timer.timeout.connect(timer.queue_free)
+	timer.start()
+	return timer
