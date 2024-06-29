@@ -49,3 +49,11 @@ static func wait_timer(parent: Node2D, wait_time: float) -> Timer:
 	timer.timeout.connect(timer.queue_free)
 	timer.start()
 	return timer
+
+
+static func shake(amount: float, max_amount: float) -> void:
+	Events.shake.emit(amount, max_amount)
+
+
+static func slowdown(duration := 0.4, strength := 0.9) -> void:
+	Slowdown.start(duration, strength)

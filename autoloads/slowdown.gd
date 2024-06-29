@@ -11,7 +11,7 @@ func _ready() -> void:
 	set_process(false)
 
 
-func start(duration := 0.4, strength := 0.9) -> void:
+func start(duration: float, strength: float) -> void:
 	time_start = Time.get_ticks_msec()
 	duration_ms = duration * 1000
 	start_value = 1 - strength

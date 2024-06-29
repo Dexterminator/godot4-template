@@ -15,4 +15,4 @@ func _ready() -> void:
 
 func _physics_process(_delta: float) -> void:
 	if Input.is_action_just_pressed(Actions.ACTION):
-		Events.shake.emit(0.4, 0.6)
+		Utils.shake(0.4, 0.6)

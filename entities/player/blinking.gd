@@ -18,4 +18,4 @@ func physics_process(_delta: float) -> void:
 
 
 func exit() -> void:
-	Slowdown.start(1)
+	Utils.slowdown(1)

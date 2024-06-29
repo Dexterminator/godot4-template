@@ -1,11 +1,11 @@
 [gd_scene load_steps=9 format=3 uid="uid://ufk40ga6x70w"]
 
 [ext_resource type="Script" path="res://entities/player/player.gd" id="1_6kye4"]
-[ext_resource type="Texture2D" uid="uid://kgy05cxa3jwh" path="res://assets/square.png" id="2_d0xjt"]
+[ext_resource type="Texture2D" uid="uid://kgy05cxa3jwh" path="res://assets/square.png" id="2_8hkea"]
 [ext_resource type="Script" path="res://utils/state_machine/state_machine.gd" id="3_ro4ve"]
 [ext_resource type="Script" path="res://entities/player/default.gd" id="4_sfu5j"]
 [ext_resource type="Script" path="res://entities/player/blinking.gd" id="5_od2rc"]
-[ext_resource type="Texture2D" uid="uid://bmd0qpjy83xbx" path="res://assets/circle.png" id="6_rnn5i"]
+[ext_resource type="Texture2D" uid="uid://bmd0qpjy83xbx" path="res://assets/circle.png" id="6_p7k7h"]
 [ext_resource type="Script" path="res://entities/player/Follower.gd" id="7_707ao"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_dq3nx"]
@@ -15,7 +15,7 @@ size = Vector2(100, 100)
 script = ExtResource("1_6kye4")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-texture = ExtResource("2_d0xjt")
+texture = ExtResource("2_8hkea")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_dq3nx")
@@ -31,5 +31,5 @@ script = ExtResource("5_od2rc")
 
 [node name="Follower" type="Sprite2D" parent="."]
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("6_rnn5i")
+texture = ExtResource("6_p7k7h")
 script = ExtResource("7_707ao")
