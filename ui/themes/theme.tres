@@ -1,0 +1,7 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://bef14xpt531v5"]
+
+[ext_resource type="FontFile" uid="uid://bfxe0yu8t6p1r" path="res://ui/fonts/Inter/Inter-VariableFont_slnt,wght.ttf" id="1_k40om"]
+
+[resource]
+default_font = ExtResource("1_k40om")
+default_font_size = 32

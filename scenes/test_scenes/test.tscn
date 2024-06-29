@@ -1,8 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://q0785d0vmqi1"]
+[gd_scene load_steps=6 format=3 uid="uid://q0785d0vmqi1"]
 
 [ext_resource type="PackedScene" uid="uid://ufk40ga6x70w" path="res://entities/player/player.tscn" id="1_2vdig"]
 [ext_resource type="PackedScene" uid="uid://bpj7fskgwfvxb" path="res://environments/wall/wall.tscn" id="2_s6s2h"]
 [ext_resource type="PackedScene" uid="uid://bp6ufviux4dtg" path="res://utils/shake_camera/shake_camera_2d.tscn" id="3_s7f5k"]
+[ext_resource type="Theme" uid="uid://bef14xpt531v5" path="res://ui/themes/theme.tres" id="4_khcfp"]
+[ext_resource type="Script" path="res://scenes/test_scenes/BlinkLabel.gd" id="5_xpddr"]
 
 [node name="Test" type="Node2D"]
 
@@ -32,6 +34,15 @@ polygon = PackedVector2Array(-152, 328, 1440, 328, 1440, 216, -152, 216)
 
 [node name="ShakeCamera2D" parent="." instance=ExtResource("3_s7f5k")]
 anchor_mode = 0
+
+[node name="BlinkLabel" type="Label" parent="."]
+offset_left = 1695.0
+offset_top = 28.0
+offset_right = 1823.0
+offset_bottom = 67.0
+theme = ExtResource("4_khcfp")
+text = "Blinks: 0"
+script = ExtResource("5_xpddr")
 
 [editable path="Wall"]
 [editable path="Wall2"]
