@@ -1,9 +1,9 @@
 extends Node
 
-const JUMP := "jump"
-const LEFT := "left"
-const RIGHT := "right"
-const ACTION := "action"
+const JUMP = "jump"
+const LEFT = "left"
+const RIGHT = "right"
+const ACTION = "action"
 
 
 func _pad_input_event(device_index: int, button_index: int) -> InputEventJoypadButton:

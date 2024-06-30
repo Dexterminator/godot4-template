@@ -1,6 +1,6 @@
 extends Node
-const BUFFER_WINDOW: int = 150
-const JOY_DEADZONE: float = 0.2
+const BUFFER_WINDOW = 150
+const JOY_DEADZONE = 0.2
 
 var keyboard_timestamps: Dictionary
 var joypad_timestamps: Dictionary
