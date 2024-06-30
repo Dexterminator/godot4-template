@@ -1,4 +1,4 @@
-.PHONY: install-gdtools fmt lint tes
+.PHONY: install-gdtools fmt lint test release
 
 install-gdtools:
 	python -m pip install gdtoolkit
