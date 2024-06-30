@@ -36,12 +36,7 @@ func _process(_delta: float) -> void:
 		Engine.time_scale = time_scale
 	if timer_label.visible:
 		var time_elapsed := Time.get_ticks_msec() - ts_timer_started
-		var total_seconds := time_elapsed / 1000.0
-		var seconds: float = fmod(total_seconds, 60.0)
-		var minutes: int = int(total_seconds / 60.0) % 60
-		var hours: int = int(total_seconds / 3600.0)
-		var time_string: String = "%02d:%02d:%05.2f" % [hours, minutes, seconds]
-		timer_label.text = time_string
+		timer_label.text = Utils.format_time(time_elapsed)
 
 	if fps_label.visible:
 		fps_label.text = "FPS: %s" % Engine.get_frames_per_second()

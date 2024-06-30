@@ -6,7 +6,7 @@ A basic project template featuring utilities like:
 - Screen shake
 - Slowdown (usable for hit stop, slomo etc)
 - Delta autoload for tracking in-game time
-- Debug overlay
+- Debug overlay and options (alt+9 to show, alt+0 to hide)
 - Scene manager (very simple, but can serve as a starting point)
 - Event bus
 - Input buffer

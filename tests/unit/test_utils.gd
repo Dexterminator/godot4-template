@@ -14,3 +14,8 @@ func test_format_number() -> void:
 	for i in len(inputs):
 		var res := Utils.format_number(inputs[i])
 		assert_eq(res, expected[i])
+
+
+func test_format_time() -> void:
+	var res := Utils.format_time(87654321)
+	assert_eq(res, "24:20:54.32")

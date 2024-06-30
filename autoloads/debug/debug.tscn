@@ -51,6 +51,7 @@ text = "Show fps:"
 
 [node name="FpsCheckbox" type="CheckBox" parent="DebugMenu/MarginContainer/VBoxContainer/HBoxContainer"]
 layout_mode = 2
+focus_mode = 0
 
 [node name="HBoxContainer2" type="HBoxContainer" parent="DebugMenu/MarginContainer/VBoxContainer"]
 layout_mode = 2
@@ -62,3 +63,4 @@ text = "Show timer:"
 
 [node name="TimerCheckbox" type="CheckBox" parent="DebugMenu/MarginContainer/VBoxContainer/HBoxContainer2"]
 layout_mode = 2
+focus_mode = 0

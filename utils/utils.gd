@@ -57,3 +57,12 @@ static func shake(amount: float, max_amount: float) -> void:
 
 static func slowdown(duration := 0.4, strength := 0.9) -> void:
 	Slowdown.start(duration, strength)
+
+
+static func format_time(time_msec: int) -> String:
+	var total_seconds := time_msec / 1000.0
+	var seconds: float = fmod(total_seconds, 60.0)
+	var minutes: int = int(total_seconds / 60.0) % 60
+	var hours: int = int(total_seconds / 3600.0)
+	var time_string: String = "%02d:%02d:%05.2f" % [hours, minutes, seconds]
+	return time_string
