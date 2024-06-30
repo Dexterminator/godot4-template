@@ -22,3 +22,7 @@ func has(x: Variant) -> bool:
 
 func size() -> int:
 	return len(_dict)
+
+
+func items() -> Array:
+	return _dict.keys()

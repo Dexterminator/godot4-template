@@ -6,3 +6,6 @@ fmt:
 
 lint:
 	gdlint $$(find . -name '*.gd')
+
+test:
+	/Applications/Godot4.app/Contents/MacOS/Godot -d -s --path "$$PWD" addons/gut/gut_cmdln.gd
