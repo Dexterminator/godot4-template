@@ -26,3 +26,47 @@ func size() -> int:
 
 func items() -> Array:
 	return _dict.keys()
+
+
+func intersection(other: Set) -> Set:
+	var smaller: Set
+	var larger: Set
+	if len(items()) > len(other.items()):
+		smaller = other
+		larger = self
+	else:
+		smaller = self
+		larger = other
+
+	var res := Set.new()
+	for x: Variant in smaller.items():
+		if larger.has(x):
+			res.add(x)
+
+	return res
+
+
+func union(other: Set) -> Set:
+	var res := Set.new()
+	res.add_all(items())
+	res.add_all(other.items())
+	return res
+
+
+func difference(other: Set) -> Set:
+	var res := Set.new()
+	for x: Variant in items():
+		if not other.has(x):
+			res.add(x)
+	return res
+
+
+func is_subset(other: Set) -> bool:
+	for x: Variant in items():
+		if not other.has(x):
+			return false
+	return true
+
+
+func is_super_set(other: Set) -> bool:
+	return other.is_subset(self)
