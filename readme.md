@@ -18,3 +18,5 @@ A basic project template featuring utilities like:
 - Example release script
 
 If using the `test` make target, make sure to edit the path to Godot to the path or alias you are using on your system.
+
+This template is meant to serve as a minimal starting point, just delete anything that isn't useful in your project and replace assets/fonts/themes as you see fit!
