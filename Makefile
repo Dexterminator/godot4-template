@@ -1,3 +1,5 @@
+.PHONY: install-gdtools fmt lint tes
+
 install-gdtools:
 	python -m pip install gdtoolkit
 
