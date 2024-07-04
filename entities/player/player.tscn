@@ -10,6 +10,7 @@
 [ext_resource type="Script" path="res://entities/player/Follower.gd" id="7_707ao"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_m3hgn"]
+resource_local_to_scene = true
 shader = ExtResource("2_js3uv")
 shader_parameter/flash_color = Color(1, 1, 1, 1)
 shader_parameter/flash_strength = 0.0

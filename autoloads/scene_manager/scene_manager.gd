@@ -33,6 +33,7 @@ func _load_new(new_scene: PackedScene) -> void:
 	var root := get_tree().get_root()
 	current_scene = new_scene.instantiate()
 	root.add_child(current_scene)
+	get_tree().current_scene = current_scene
 
 
 func _disable_current() -> void:

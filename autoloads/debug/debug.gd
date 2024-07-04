@@ -61,3 +61,6 @@ func _input(_event: InputEvent) -> void:
 			Engine.time_scale = 1
 		else:
 			time_scale = 0.3
+
+	if Input.is_key_pressed(KEY_3):
+		get_tree().reload_current_scene()
