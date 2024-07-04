@@ -7,6 +7,7 @@ var gravity: float = ProjectSettings.get_setting("physics/2d/default_gravity")
 var blink_count := 0
 
 @onready var state_machine: StateMachine = $StateMachine
+@onready var sprite: Sprite2D = $Sprite2D
 
 
 func _ready() -> void:
