@@ -41,14 +41,14 @@ static func spawn(factory: PackedScene, parent: Node2D, pos: Vector2) -> Node2D:
 	return node
 
 
-static func wait_timer(parent: Node2D, wait_time: float) -> Timer:
+static func wait(parent: Node, wait_time: float) -> Signal:
 	var timer := Timer.new()
 	parent.add_child(timer)
 	timer.wait_time = wait_time
 	timer.one_shot = true
 	timer.timeout.connect(timer.queue_free)
 	timer.start()
-	return timer
+	return timer.timeout
 
 
 static func shake(amount: float, max_amount: float) -> void:
